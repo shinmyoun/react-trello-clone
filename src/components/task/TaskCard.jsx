@@ -9,14 +9,15 @@ export const TaskCard = () => {
   const [taskList, setTaskList] = useState([
     {
       id: 0,
+      draggableId: "task-0",
       text: "読書",
     },
     {
       id: 1,
+      draggableId: "task-1",
       text: "散歩",
     },
   ]);
-  console.log(taskList);
 
   return (
     <div className="taskCard">
