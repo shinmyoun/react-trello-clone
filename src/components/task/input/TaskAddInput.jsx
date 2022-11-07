@@ -8,7 +8,12 @@ export const TaskAddInput = ({
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+
+    // 入力欄が空白の場合、タスクが追加されない
+    if (inputText === "") {
+      return;
+    }
+
     // カードを追加する。
     setTaskList([
       ...taskList,
