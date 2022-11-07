@@ -6,7 +6,17 @@ import { Tasks } from "./Tasks";
 
 export const TaskCard = () => {
   const [inputText, setInputText] = useState("");
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState([
+    {
+      id: 0,
+      text: "読書",
+    },
+    {
+      id: 1,
+      text: "散歩",
+    },
+  ]);
+  console.log(taskList);
 
   return (
     <div className="taskCard">
@@ -18,7 +28,7 @@ export const TaskCard = () => {
         setTaskList={setTaskList}
         taskList={taskList}
       />
-      <Tasks />
+      <Tasks inputText={inputText} taskList={taskList} />
     </div>
   );
 };
