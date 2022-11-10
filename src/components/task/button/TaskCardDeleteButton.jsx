@@ -1,5 +1,11 @@
 import React from "react";
 
 export const TaskCardDeleteButton = () => {
-  return <div>TaskCardDeleteButton</div>;
+  return (
+    <div>
+      <button className="taskCardDeleteButton">
+        <i className="fas fa-times"></i>
+      </button>
+    </div>
+  );
 };
