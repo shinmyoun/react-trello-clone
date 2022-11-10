@@ -7,13 +7,17 @@ export const Task = ({ task, taskList, setTaskList, index }) => {
   };
   return (
     <Draggable index={index} draggableId={task.draggableId}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
           className="taskBox"
           key={task.id}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
+          style={{
+            ...provided.draggableProps.style,
+            opacity: snapshot.isDragging ? "0.5" : "1",
+          }}
         >
           <p className="taskText">{task.text}</p>
           <button
