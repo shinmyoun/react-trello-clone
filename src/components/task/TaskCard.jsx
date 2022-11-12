@@ -33,13 +33,15 @@ export const TaskCard = ({
           key={taskCard.id}
           ref={provided.innerRef}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}
           style={{
             ...provided.draggableProps.style,
             opacity: snapshot.isDragging ? "0.5" : "1",
           }}
         >
-          <div className="taskCardTitleAndTaskCardDeleteButtonArea">
+          <div
+            className="taskCardTitleAndTaskCardDeleteButtonArea"
+            {...provided.dragHandleProps}
+          >
             <TaskCardTitle />
             <TaskCardDeleteButton
               taskCard={taskCard}
